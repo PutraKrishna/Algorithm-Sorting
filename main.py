@@ -1,5 +1,5 @@
-import random  # Untuk membuat angka acak
-import time    # Untuk mengukur waktu eksekusi
+import random
+import time
 
 # ===============================================
 # BAGIAN 1: MEMBUAT DATA PENJUALAN
@@ -262,8 +262,8 @@ def tampilkan_hasil(hasil_sorting):
     Fungsi untuk menampilkan hasil dalam bentuk tabel
     Input: hasil_sorting (list berisi hasil dari 3 algoritma)
     """
-    print("\n" + "=" * 60)
-    print("HASIL ANALISIS PENJUALAN SMARTPHONE")
+    print("\n"+"=" * 60)
+    print(f"|{' ' * 12}HASIL ANALISIS PENJUALAN SMARTPHONE{' ' * 11}|")
     print("=" * 60)
     
     # Ambil data yang sudah diurutkan (semua algoritma hasilnya sama)
@@ -274,17 +274,17 @@ def tampilkan_hasil(hasil_sorting):
     brand_terendah = data_terurut[-1]  # Elemen terakhir = terendah
     
     # Tampilkan informasi penjualan
-    print(f"\n{'|' + ' ' * 58 + '|'}")
-    print(f"|{' ' * 15}PENJUALAN SMARTPHONE{' ' * 16}|")
+    print(f"{'|' + ' ' * 58 + '|'}")
+    print(f"|{' ' * 19}PENJUALAN SMARTPHONE{' ' * 19}|")
     print(f"|{' ' * 58}|")
-    print(f"| Tertinggi: {brand_tertinggi['produk']:<15} ({brand_tertinggi['jumlah_terjual']:>3} unit) |")
-    print(f"| Terendah:  {brand_terendah['produk']:<15} ({brand_terendah['jumlah_terjual']:>3} unit) |")
+    print(f"| Tertinggi: {brand_tertinggi['produk']:<15} ({brand_tertinggi['jumlah_terjual']:>3} unit) {' ' * 19}|")
+    print(f"| Terendah:  {brand_terendah['produk']:<15} ({brand_terendah['jumlah_terjual']:>3} unit) {' ' * 19}|")
     print(f"|{'_' * 58}|")
     
     # Tampilkan tabel perbandingan algoritma
-    print(f"\n{'=' * 75}")
-    print(f"|{'Algoritma':<15}|{'Waktu (ms)':<12}|{'Perbandingan':<15}|{'Langkah':<12}|")
-    print(f"{'=' * 75}")
+    print(f"\n{'=' * 60}")
+    print(f"|{'Algoritma':<15}|{'Waktu (ms)':<12}|{'Perbandingan':<15}|{'Langkah':<13}|")
+    print(f"{'=' * 60}")
     
     for hasil in hasil_sorting:
         nama_algo = hasil['nama_algoritma']
@@ -292,9 +292,9 @@ def tampilkan_hasil(hasil_sorting):
         perbandingan = hasil['jumlah_perbandingan']
         langkah = hasil['jumlah_pertukaran']
         
-        print(f"|{nama_algo:<15}|{waktu:<12}|{perbandingan:<15}|{langkah:<12}|")
+        print(f"|{nama_algo:<15}|{waktu:<12}|{perbandingan:<15}|{langkah:<13}|")
     
-    print(f"{'=' * 75}")
+    print(f"{'=' * 60}")
 
 # ===============================================
 # BAGIAN 7: FUNGSI UTAMA PROGRAM
@@ -376,7 +376,6 @@ def main():
     tampilkan_hasil(hasil_semua_algoritma)
     
     print(f"\nAnalysis completed successfully!")
-    print("Program dibuat untuk belajar algoritma sorting")
 
 # ===============================================
 # MENJALANKAN PROGRAM
