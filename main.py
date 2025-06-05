@@ -254,7 +254,36 @@ def gabung_data(data, kiri, tengah, kanan):
         pertukaran_merge = pertukaran_merge + 1
 
 # ===============================================
-# BAGIAN 6: FUNGSI UNTUK MENAMPILKAN HASIL
+# BAGIAN 6: FUNGSI UNTUK MENAMPILKAN RANKING
+# ===============================================
+
+def tampilkan_ranking_penjualan(data_terurut):
+    """
+    Fungsi untuk menampilkan ranking penjualan smartphone
+    Input: data_terurut (list berisi data yang sudah diurutkan)
+    """
+    print("\n" + "=" * 45)
+    print(f"|{' ' * 8}RANKING PENJUALAN SMARTPHONE{' ' * 8}|")
+    print("=" * 45)
+    print(f"|{'Rank':<6}|{'Brand':<15}|{'Total Penjualan':<19}|")
+    print("=" * 45)
+    
+    # Hitung total keseluruhan penjualan
+    total_keseluruhan = sum(item['jumlah_terjual'] for item in data_terurut)
+    
+    # Tampilkan setiap brand dengan rankingnya
+    for i, brand_data in enumerate(data_terurut, 1):
+        nama_brand = brand_data['produk']
+        total_penjualan = brand_data['jumlah_terjual']
+        
+        print(f"|{i:<6}|{nama_brand:<15}|{total_penjualan:<19}|")
+    
+    print("=" * 45)
+    print(f"|{'TOTAL':<22}|{total_keseluruhan:<19}|")
+    print("=" * 45)
+
+# ===============================================
+# BAGIAN 7: FUNGSI UNTUK MENAMPILKAN HASIL
 # ===============================================
 
 def tampilkan_hasil(hasil_sorting):
@@ -281,8 +310,13 @@ def tampilkan_hasil(hasil_sorting):
     print(f"| Terendah:  {brand_terendah['produk']:<15} ({brand_terendah['jumlah_terjual']:>3} unit) {' ' * 19}|")
     print(f"|{'_' * 58}|")
     
+    # Tampilkan ranking lengkap penjualan smartphone
+    tampilkan_ranking_penjualan(data_terurut)
+    
     # Tampilkan tabel perbandingan algoritma
     print(f"\n{'=' * 60}")
+    print(f"|{'PERBANDINGAN ALGORITMA SORTING':<58}|")
+    print(f"{'=' * 60}")
     print(f"|{'Algoritma':<15}|{'Waktu (ms)':<12}|{'Perbandingan':<15}|{'Langkah':<13}|")
     print(f"{'=' * 60}")
     
@@ -297,7 +331,7 @@ def tampilkan_hasil(hasil_sorting):
     print(f"{'=' * 60}")
 
 # ===============================================
-# BAGIAN 7: FUNGSI UTAMA PROGRAM
+# BAGIAN 8: FUNGSI UTAMA PROGRAM
 # ===============================================
 
 def main():
