@@ -1,6 +1,6 @@
-# Final Project - Sorting Algorithm Analysis (UAS)
+# Final Project - Sorting Algorithm Analysis
 
-This repository contains a Python implementation for analyzing the performance of three sorting algorithms. The project is developed as part of a **Final Examination (UAS)** assignment for the Algorithms and Programming course.
+This repository contains a Python implementation for analyzing the performance of three sorting algorithms. The project is developed as part of a **Final Examination** assignment for the Algorithms and Programming course.
 
 ## 🎯 Project Objective
 
