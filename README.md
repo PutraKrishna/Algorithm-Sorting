@@ -11,9 +11,8 @@ To compare the **efficiency of sorting algorithms** in arranging smartphone sale
 
 ## 🛠️ Technologies Used
 
-- Python 3.x
-- Visual Studio Code / Jupyter Notebook
-- (Optional) Matplotlib for visualization
+- Python 3.12.4
+- Visual Studio Code
 
 ## 📄 Description
 
